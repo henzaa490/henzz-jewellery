@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Cart</title>
+  
+  <style>
+    .cart-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+
+    .cart-item img {
+      width: 60px;
+      height: 60px;
+      border-radius: 5px;
+    }
+
+    .cart-item-info {
+      flex-grow: 1;
+    }
+
+    .cart-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .cart-buttons button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .remove-btn {
+      background-color: #ccac70;
+      color: white;
+    }
+
+    .buy-btn {
+      background-color: #ccac70;
+      color: white;
+    }
+
+    #message {
+      background-color: #f8d7da ;
+      color: #b12d3a ;
+      padding :10px ;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      display: none ;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Your Cart</h2>
+<div id="message"></div>
+<div id="cart-list"></div>
+
+<script src="javascript.js" ></script>
+
+
+
+
+
+
+<script>
+  let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  const cartList = document.getElementById('cart-list');
+  const messageBox = document.getElementById('message');
+
+  function showMessage(text) {
+    messageBox.textContent = text;
+    messageBox.style.display = 'block';
+    setTimeout(() => {
+      messageBox.style.display = 'none';
+    }, 2000); // hides after 2 seconds
+  }
+
+  function renderCart() {
+    cartList.innerHTML = "";
+
+    if (cartItems.length === 0) {
+      cartList.innerHTML = "<p>Your cart is empty.</p>";
+      return;
+    }
+
+    cartItems.forEach((item, index) => {
+      const div = document.createElement('div');
+      div.className = 'cart-item';
+      div.innerHTML = `
+        <img src="${item.img}" alt="${item.title}">
+        <div class="cart-item-info">
+          <p><strong>${item.title}</strong></p>
+          <p>$${item.price.toFixed(2)}</p>
+        </div>
+        <div class="cart-buttons">
+          <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
+          <button class="buy-btn" onclick="buyNow(${index})">Buy Now</button>
+          
+        </div>
+      `;
+      cartList.appendChild(div);
+    });
+  }
+
+  function removeFromCart(index) {
+    const removedItem = cartItems[index];
+    cartItems.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    showMessage(`"${removedItem.title}" has been removed from cart.`);
+    renderCart();
+  }
+
+  function buyNow(index) {
+    const item = cartItems[index];
+    
+  localStorage.setItem('buy-now', JSON.stringify(buyItem));
+  window.location.href = 'order.html';  // Redirects to your order page
+}
+
+
+  
+
+  renderCart();
+</script>
+
+</body>
+</html>
+

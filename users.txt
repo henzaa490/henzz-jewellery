@@ -1,0 +1,4 @@
+John|fathimahanazuhair@gmail.com|1234
+Alice|alice@abc.com|mypassword
+TestUser|test@demo.com|pass123
+Test User|test@example.com|1234

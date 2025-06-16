@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shipping & Delivery</title>
+  <link rel="stylesheet" href="shipping and D.css" />
+</head>
+<body>
+
+  <!--Emojis used here below are copied from https://emojipedia.org
+  -->>
+  <div class="container">
+  <h1>🚚 Shipping & Delivery</h1>
+  <p>Your jewellery is on its way to becoming part of your story. We ensure fast, secure, and traceable delivery — because every detail matters.</p>
+
+  <h2>📦 Shipping Rates</h2>
+  <tableborder="1">
+    <tr>
+      <th>Shipping Type</th>
+      <th>Estimated Delivery</th>
+      <th>Cost</th>
+    </tr>
+    <tr>
+      <td>Standard (Local)</td>
+      <td>5–7 business days</td>
+      <td>Free for orders over $100<br>$6.99 for others</td>
+    </tr>
+    <tr>
+      <td>Express (Local)</td>
+      <td>2–3 business days</td>
+      <td>$12.99</td>
+    </tr>
+    <tr>
+      <td>International</td>
+      <td>7–14 business days</td>
+      <td>Calculated at checkout</td>
+    </tr>
+  </table>
+
+  
+  <h2>🌍 Shipping Availability</h2>
+<p>We proudly ship across the country and to selected international destinations. Check if we deliver to your area below:</p>
+
+<!--Emojis used in the checkbox are copied from https://emojipedia.org/flags/-->
+<form>
+  <!--for country selection-->
+  <label for="country">Select your country:</label><br>
+  <select id="country" name="country" onchange="alertShipping()" required>
+    <option value="">-- Please choose an option --</option>
+    <option value="Sri Lanka">🇱🇰 Sri Lanka</option>
+    <option value="india">🇮🇳 India</option>
+    <option value="USA">🇺🇸 United States</option>
+    <option value="UK">🇬🇧 United Kingdom</option>
+    <option value="australia">🇦🇺 Australia</option>
+    <option value="UAE">🇦🇪 United Arab Emirates</option>
+    <option value="canada">🇨🇦 Canada</option>
+    <option value="germany">🇩🇪 Germany</option>
+    <option value="france">🇫🇷 France</option>
+    <option value="japan">🇯🇵 Japan</option>
+    <option value="other">🌍 Other</option>
+  </select><br><br>
+  </form>
+
+  <!-- Message Area -->
+<p id="shippingMessage" class="info-box">
+  📦 Please select a country to check shipping availability.
+</p>
+
+<h2>🌍 Our Shipping Passport</h2>
+<p class="centered-text">
+  Explore how your jewels journey across the globe. Each destination, one thoughtful delivery at a time.
+</p>
+
+<div class="shipping-stamp-container">
+
+  <div class="shipping-stamp">
+    <h3>🇱🇰 Sri Lanka</h3>
+    <p>💰 Shipping: <strong>FREE</strong></p>
+    <p>📦 Delivery: 3–5 business days</p>
+  </div>
+
+  <div class="shipping-stamp">
+    <h3>🇮🇳 India</h3>
+    <p>💰 Shipping: <strong>$4.99</strong></p>
+    <p>📦 Delivery: 5–7 business days</p>
+  </div>
+
+  <div class="shipping-stamp">
+    <h3>🇺🇸 United States</h3>
+    <p>💰 Shipping: <strong>$9.99</strong></p>
+    <p>📦 Delivery: 7–10 business days</p>
+  </div>
+
+  <div class="shipping-stamp">
+    <h3>🇬🇧 United Kingdom</h3>
+    <p>💰 Shipping: <strong>$8.99</strong></p>
+    <p>📦 Delivery: 7–10 business days</p>
+  </div>
+
+  <div class="shipping-stamp">
+    <h3>🇦🇺 Australia</h3>
+    <p>💰 Shipping: <strong>$10.99</strong></p>
+    <p>📦 Delivery: 7–12 business days</p>
+  </div>
+
+  <div class="shipping-stamp">
+    <h3>🇦🇪 United Arab Emirates</h3>
+    <p>🚀 Express Only</p>
+    <p>💰 Shipping: <strong>$12.99</strong></p>
+    <p>📦 Delivery: 5–7 business days</p>
+  </div>
+
+  <div class="shipping-stamp">
+    <h3>🇨🇦 Canada</h3>
+    <p>💰 Shipping: <strong>$9.49</strong></p>
+    <p>📦 Delivery: 7–10 business days</p>
+  </div>
+
+  <div class="shipping-stamp">
+    <h3>🇩🇪 Germany</h3>
+    <p>💰 Shipping: <strong>$8.99</strong></p>
+    <p>📦 Delivery: 7–12 business days</p>
+  </div>
+
+  <div class="shipping-stamp">
+    <h3>🇫🇷 France</h3>
+    <p>💰 Shipping: <strong>$8.99</strong></p>
+    <p>📦 Delivery: 7–12 business days</p>
+  </div>
+
+  <div class="shipping-stamp">
+    <h3>🇯🇵 Japan</h3>
+    <p>💰 Shipping: <strong>$10.99</strong></p>
+    <p>📦 Delivery: 7–14 business days</p>
+  </div>
+
+  <div class="shipping-stamp">
+    <h3>🌍 Other Countries</h3>
+    <p>💰 Shipping: <strong>From $14.99</strong></p>
+    <p>📦 Delivery: 10–20 business days</p>
+    <p>📝 Exact cost shown at checkout</p>
+  </div>
+
+</div>
+
+<p class="free-shipping-note">
+  🎁 Free shipping on all orders over $100 — worldwide!
+</p>
+
+
+  <label for="zipcode">Enter your postal code (optional):</label><br>
+  <input type="text" id="zipcode" name="zipcode" placeholder="e.g., 400001"><br><br>
+
+  <p id="highlight-box">
+    ✅ Great news! We deliver to your location. Thank You for choosing us!.
+  </p>
+</form>
+
+  <h2>⏳ Processing Time</h2>
+  <p>Orders are processed within <strong>1–2 business days</strong>. Custom or engraved pieces may take an additional 3–5 days to prepare before shipping.</p>
+
+  <h2>🔍 Track Your Order</h2>
+  <p>Still waiting? We're here to help. Let us know your order details, and we’ll find out where your jewellery is right now!</p>
+
+  <form action="shipping and D.php" method="post">
+    <label for="orderId">Order ID:</label><br>
+    <input type="text" id="orderId" name="orderId" placeholder="e.g. #123456" required><br><br>
+
+    <label for="email">Your Email:</label><br>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required><br><br>
+
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="4" placeholder="Write your concern or question here..."></textarea><br><br>
+
+    <button type="submit">📨 Submit Request</button>
+  </form>
+
+  <h2>💬 Need Help?</h2>
+  <p>Need urgent assistance? <a href="contact.html">Chat with us</a> or email us at <a href="mailto:support@yourjewelrystore.com">support@yourjewelrystore.com</a>.</p>
+
+  <p>Thank you for choosing us — your trust means everything. ✨</p>
+
+<script>
+  // This function will trigger the alert based on the country selection
+  function alertShipping() {
+    var country = document.getElementById("country").value;
+
+    if (country === "") {
+      alert("📦 Please select a country.");
+    } else if (country === "other") {
+      alert("❓ Please contact us to confirm shipping to your country.");
+    } else {
+      alert("✅ Yes! We ship to " + country.toUpperCase());
+    }
+  }
+</script>
+<script>
+  function updateShippingEstimator() {
+    const orderAmount = document.getElementById("orderAmount").value;
+    const urgency = document.getElementById("urgency").value;
+    const orderValueSpan = document.getElementById("orderValue");
+    const urgencyLabel = document.getElementById("urgencyLabel");
+    const feeDisplay = document.getElementById("smartFeeDisplay");
+
+    orderValueSpan.innerText = orderAmount;
+
+    let urgencyText = "";
+    let baseFee = 0;
+
+    switch (parseInt(urgency)) {
+      case 1:
+        urgencyText = "Standard (5–7 days)";
+        baseFee = 6.99;
+        break;
+      case 2:
+        urgencyText = "Express (2–3 days)";
+        baseFee = 12.99;
+        break;
+      case 3:
+        urgencyText = "Overnight (1 day)";
+        baseFee = 18.99;
+        break;
+    }
+
+    urgencyLabel.innerText = urgencyText;
+
+    let discount = 0;
+    if (orderAmount >= 100) {
+      discount = baseFee; // Free shipping
+    } else if (orderAmount >= 50) {
+      discount = baseFee * 0.4; // 40% off
+    } else if (orderAmount >= 30) {
+      discount = baseFee * 0.2; // 20% off
+    }
+
+    const finalFee = (baseFee - discount).toFixed(2);
+
+    feeDisplay.innerHTML = `📦 Estimated Shipping Fee: <strong>$${finalFee}</strong> (${urgencyText})`;
+  }
+
+  // Initialize on load
+  window.onload = updateShippingEstimator;
+</script>
+</body>
+</html>
